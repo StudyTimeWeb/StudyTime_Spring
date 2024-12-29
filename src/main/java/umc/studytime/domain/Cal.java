@@ -2,20 +2,16 @@ package umc.studytime.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
-@DynamicInsert
-@DynamicUpdate
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Calendar extends BaseEntity{
+public class Cal extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,9 +30,11 @@ public class Calendar extends BaseEntity{
     @Column(columnDefinition = "DEFAULT 'color0'")
     private Acheived acheived;
 
-    @OneToMany(mappedBy = "Calendar", cascade = CascadeType.ALL)
-    private List<Timer> timer = new ArrayList<>();
+    @OneToMany(mappedBy = "cal", cascade = CascadeType.ALL)
+    private List<Subject> subject = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Calendar", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cal", cascade = CascadeType.ALL)
     private List<HourCount> hourCount = new ArrayList<>();
+
+
 }

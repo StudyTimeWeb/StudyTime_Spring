@@ -59,6 +59,6 @@ public class HourCount extends BaseEntity{
     private Long time11;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "calendar_id")
-    private Calendar calendar;
+    @JoinColumn(name = "cal_id")
+    private Cal cal;
 }

@@ -40,12 +40,12 @@ public class Subject extends BaseEntity {
     private String realRest;
 
 
-    @OneToMany(mappedBy = "Subject", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
     private List<Timer> timer = new ArrayList<>();
 
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "calendar_id")
-    private Calendar calendar;
+    @JoinColumn(name = "cal_id")
+    private Cal cal;
 }
 
