@@ -27,16 +27,16 @@ public class Subject extends BaseEntity {
     @Column(nullable = false, length = 20)
     private String name;
 
-    @Column(nullable = false)
+    @Column
     private String restGoal;
 
-    @Column(nullable = false)
+    @Column
     private String studyGoal;
 
-    @Column(nullable = false)
+    @Column
     private String realStudy;
 
-    @Column(nullable = false)
+    @Column
     private String realRest;
 
 
