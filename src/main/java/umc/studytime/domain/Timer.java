@@ -20,10 +20,10 @@ public class Timer extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private LocalDateTime startTime;
 
-    @Column(nullable = false)
+    @Column
     private LocalDateTime endTime;
 
     @ManyToOne(fetch = FetchType.LAZY)

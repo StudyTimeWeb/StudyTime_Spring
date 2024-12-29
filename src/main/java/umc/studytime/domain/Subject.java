@@ -41,7 +41,7 @@ public class Subject extends BaseEntity {
 
 
     @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
-    private List<Timer> timer = new ArrayList<>();
+    private List<Timer> timerList = new ArrayList<>();
 
 
     @ManyToOne(fetch = FetchType.LAZY)

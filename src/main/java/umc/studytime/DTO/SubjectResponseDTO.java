@@ -13,10 +13,9 @@ public class SubjectResponseDTO {
     public static class TimerResultDTO{
         Long subjectId;
         String subjectName;
-        String restTime;
+        String restGoal;
         String dayGoal;
         String studyGoal;
-        String storeName;
     }
 
 }
