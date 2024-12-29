@@ -2,20 +2,27 @@ package umc.studytime.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import umc.studytime.Repository.SubjectRepository;
+import umc.studytime.converter.SubjectConverter;
 import umc.studytime.domain.Subject;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
 public class SubjectService {
+
     private final SubjectRepository subjectRepository;
 
-    public Optional<Subject> findSubject(Long id) {
-        return subjectRepository.findById(id);
+    public Subject createSubject(umc.studytime.dto.SubjectRequestDTO.createDTO request) {
+
+        Subject subject = SubjectConverter.toSubject(request);
+
+        return subjectRepository.save(subject);
     }
 
+    public void deleteSubject(Long subjectId) {
+
+        Subject subject = subjectRepository.findById(subjectId)
+                .orElseThrow(() -> new IllegalArgumentException("Subject not found with id: " + subjectId));
+        subjectRepository.delete(subject);
+    }
 }

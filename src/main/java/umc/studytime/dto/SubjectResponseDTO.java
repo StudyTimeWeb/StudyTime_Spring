@@ -1,4 +1,4 @@
-package umc.studytime.DTO;
+package umc.studytime.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,4 +18,11 @@ public class SubjectResponseDTO {
         String studyGoal;
     }
 
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class CreateResultDTO {
+        Long subjectId;
+    }
 }

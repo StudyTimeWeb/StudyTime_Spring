@@ -23,4 +23,8 @@ public class ApiResponse<T> {
     public static <T> ApiResponse<T> onSuccess(T result) {
         return new ApiResponse<>(true, SuccessStatus.OK.getCode(), SuccessStatus.OK.getMessage(), result);
     }
+
+    public static <T> ApiResponse<T> onFailure(String code, String message, T data){
+        return new ApiResponse<>(false, code, message, data);
+    }
 }

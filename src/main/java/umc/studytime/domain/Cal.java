@@ -22,16 +22,17 @@ public class Cal extends BaseEntity{
     private String date;
 
     @Column
-    private String dayGoal;
+    private Integer dayGoal;
 
     @Enumerated(EnumType.STRING)
     @ColumnDefault("'color0'")
     private Acheived acheived;
 
     @OneToMany(mappedBy = "cal", cascade = CascadeType.ALL)
-    private List<Subject> subjectList = new ArrayList<>();
+    private List<Subject> subject = new ArrayList<>();
 
     @OneToMany(mappedBy = "cal", cascade = CascadeType.ALL)
-    private List<HourCount> hourCountList = new ArrayList<>();
+    private List<HourCount> hourCount = new ArrayList<>();
+
 
 }
