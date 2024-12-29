@@ -17,4 +17,5 @@ public class TimerService {
 
     public Optional<Subject> findMission(Long id) {
         return subjectRepository.findById(id);
+    }
 }

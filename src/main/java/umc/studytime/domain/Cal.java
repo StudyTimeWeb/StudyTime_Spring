@@ -2,6 +2,7 @@ package umc.studytime.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +18,12 @@ public class Cal extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String date;
 
-    @Column(nullable = false)
     private Integer dayGoal;
 
     @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "DEFAULT 'color0'")
+    @ColumnDefault("'color0'")
     private Acheived acheived;
 
     @OneToMany(mappedBy = "cal", cascade = CascadeType.ALL)
