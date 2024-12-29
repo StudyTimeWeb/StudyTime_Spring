@@ -18,8 +18,10 @@ public class Cal extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String date;
 
+    @Column
     private Integer dayGoal;
 
     @Enumerated(EnumType.STRING)

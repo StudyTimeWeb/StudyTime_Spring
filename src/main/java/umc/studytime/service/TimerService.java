@@ -4,7 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import umc.studytime.Repository.SubjectRepository;
+import umc.studytime.Repository.TimerRepository;
 import umc.studytime.domain.Subject;
+import umc.studytime.domain.Timer;
 
 import java.util.Optional;
 
@@ -12,10 +14,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class TimerService {
-    private final SubjectRepository subjectRepository;
+    private final TimerRepository timerRepository;
 
-
-    public Optional<Subject> findMission(Long id) {
-        return subjectRepository.findById(id);
+    public Optional<Timer> findTimer(Long id) {
+        return timerRepository.findById(id);
     }
+
 }

@@ -8,7 +8,7 @@ import umc.studytime.domain.Subject;
 
 @Service
 @RequiredArgsConstructor
-public class DetailService {
+public class SubjectService {
 
     private final SubjectRepository subjectRepository;
 
