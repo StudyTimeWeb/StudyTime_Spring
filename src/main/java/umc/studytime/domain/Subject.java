@@ -27,21 +27,21 @@ public class Subject extends BaseEntity {
     @Column(nullable = false, length = 20)
     private String name;
 
-    @Column(nullable = false)
+    @Column
     private String restGoal;
 
-    @Column(nullable = false)
+    @Column
     private String studyGoal;
 
-    @Column(nullable = false)
+    @Column
     private String realStudy;
 
-    @Column(nullable = false)
+    @Column
     private String realRest;
 
 
     @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
-    private List<Timer> timer = new ArrayList<>();
+    private List<Timer> timerList = new ArrayList<>();
 
 
     @ManyToOne(fetch = FetchType.LAZY)
